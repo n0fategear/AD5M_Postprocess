@@ -26,6 +26,8 @@
 
 Python 3.7+ — только стандартная библиотека, ничего устанавливать не нужно.
 
+Для Windows есть вариант без Python — `ad5m_postprocess.exe` (см. [Сборка exe](#сборка-exe-для-windows)).
+
 ## Подключение в OrcaSlicer
 
 **Процесс → Прочее → Скрипты постобработки**:
@@ -33,6 +35,7 @@ Python 3.7+ — только стандартная библиотека, нич
 ```text
 Windows:      "C:\Python312\python.exe" "C:\Scripts\ad5m_postprocess.py";
 Linux/macOS:  /usr/bin/python3 /home/user/scripts/ad5m_postprocess.py;
+Windows exe:  "C:\Scripts\ad5m_postprocess.exe";
 ```
 
 Старые скрипты времени и MD5 из списка нужно удалить — этот скрипт их заменяет,
@@ -61,6 +64,17 @@ python ad5m_postprocess.py --check file.gcode
 ```sh
 python -m unittest discover -s tests -v
 ```
+
+## Сборка exe для Windows
+
+```sh
+python -m pip install pyinstaller
+pyinstaller --onefile --console --clean --name ad5m_postprocess ad5m_postprocess.py
+```
+
+Готовый файл — `dist\ad5m_postprocess.exe` (~8 МБ, Python внутри). Аргументы те же,
+что у скрипта, включая `--check`. Первый запуск может занять секунду — onefile-exe
+распаковывается во временную папку.
 
 ## Если Fluidd не показывает филамент
 
