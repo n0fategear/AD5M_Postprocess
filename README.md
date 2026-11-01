@@ -26,7 +26,18 @@
 
 Python 3.7+ — только стандартная библиотека, ничего устанавливать не нужно.
 
-Для Windows есть вариант без Python — `ad5m_postprocess.exe` (см. [Сборка exe](#сборка-exe-для-windows)).
+Для Windows есть вариант без Python — `ad5m_postprocess.exe`.
+
+## Скачать
+
+Готовые файлы — на странице [последнего релиза](https://github.com/n0fategear/AD5M_Postprocess/releases/latest):
+
+- `ad5m_postprocess.exe` — для Windows, Python не нужен;
+- `ad5m_postprocess.py` — для Windows / Linux / macOS, нужен Python 3.7+;
+- `ad5m_postprocess.exe.sha256` — контрольная сумма exe.
+
+Exe не подписан, поэтому Windows SmartScreen или Defender могут предупредить при первом
+запуске. Собрать exe самостоятельно — см. [Сборка exe](#сборка-exe-для-windows).
 
 ## Подключение в OrcaSlicer
 
